@@ -1,22 +1,24 @@
 {
-    "dependencies": {
-        "concurrently": "^7.6.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "parcel": "^1.12.4",
-        "parcel-bundler": "^1.2.0",
-        "prettier": "^2.8.1",
-        "typescript": "^4.9.4"
-    },
-    "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.46.1",
-        "@typescript-eslint/parser": "^5.46.1",
-        "eslint": "^8.29.0",
-        "ts-node": "^10.9.1"
-    },
-    "scripts": {
-        "start:lint": "eslint . --ext .ts",
-        "start:build": "tsc -w",
-        "start:parcel": "parcel index.html",
-        "start": "concurrently npm:start:*"
-    }
+  "dependencies": {
+    "axios": "^1.2.2",
+    "concurrently": "^7.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.2.0",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
+    "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "start:db": "json-server -w db.json",
+    "start:build": "tsc -w",
+    "start:parcel": "parcel index.html",
+    "start:lint": "eslint . --ext .ts",
+    "start": "concurrently npm:start:*"
+  }
 }

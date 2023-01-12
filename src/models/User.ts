@@ -1,19 +1,13 @@
 import { UserProps } from '../interfaces';
+import { Model } from './Model';
+import { Attributes } from './Attributes';
+import { ApiSync } from './ApiSync';
 import { Eventing } from './eventing';
-import { Sync } from './Sync';
 
 const URL = 'http://localhost:3000/users';
-export class User {
-  public events: Eventing = new Eventing();
-  public sync: Sync<UserProps> = new Sync<UserProps>(URL);
 
-  constructor(private data: UserProps) {}
-
-  get<K extends keyof UserProps>(propName: K): string | number | void {
-    return this.data[propName];
-  }
-
-  set(update: UserProps): void {
-    Object.assign(this.data, update);
+export class User extends Model<UserProps> {
+  static buildUser(attrs: UserProps): User {
+    return new User(new Attributes<UserProps>(attrs), new Eventing(), new ApiSync<UserProps>(URL));
   }
 }

@@ -1,5 +1,7 @@
-import { Callback } from './types';
+import { Callback, FetchCallback } from './types';
 import { AxiosPromise } from 'axios';
+import { User } from './models/User';
+import { Eventing } from './models/eventing';
 
 export interface UserProps {
   name?: string;
@@ -26,3 +28,9 @@ export interface Events {
   on(eventName: string, callback: Callback): void;
   trigger(eventName: string): void;
 }
+
+// export interface Collection<T> {
+//   models: T[];
+//   events: Eventing;
+//   fetch: FetchCallback;
+// }

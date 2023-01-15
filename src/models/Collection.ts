@@ -1,6 +1,6 @@
 // import { Collection } from '../interfaces';
 import axios, { AxiosResponse } from 'axios';
-import { Eventing } from './eventing';
+import { Eventing } from './Eventing';
 
 export class Collection<T, K> {
   models: T[] = [];
